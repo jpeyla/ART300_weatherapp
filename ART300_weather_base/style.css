@@ -35,7 +35,7 @@ p{
     font-family:'Rubik', sans-serif;
     display: grid;
     grid-template-columns: 5% 5% 25% 25% 20% 20% 5%; 
-    grid-template-rows: 5% 5% 5% 25% 20% 10%;
+    grid-template-rows: 5% 5% 5% 25% 15% 30%;
     margin-left:1%;
     height:600px;
     border-radius: 7px;
@@ -157,8 +157,8 @@ p{
 }
 
 .current_wind{
-    grid-row-start: 4;
-    grid-row-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 3;
     justify-self: end;
 }
 
@@ -173,7 +173,90 @@ p{
     margin-right: 6%;
 }
 
+.information{
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 6;
+    background-color: #5662A9;
+    margin-right: 30%;
+    margin-left: 5%;
+    margin-top: 5%;
+}
 
+.info_innergrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    padding: 5%;
+}
+
+#vis_label{
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+.current_vis{
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    justify-self: end;
+}
+
+.pop_label{
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+
+.current_pop{
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    justify-self: end;
+}
+
+.dewpt_label{
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 3;
+    grid-row-end: 3;
+}
+
+.current_dewpt{
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 3;
+    justify-self: end;
+}
+
+.pres_label{
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 4;
+    grid-row-end: 4;
+}
+
+.current_pres{
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 4;
+    grid-row-end: 4;
+    justify-self: end;
+}
+
+.sun_position{
+    grid-column-start: 5;
+    grid-column-end: 7;
+    grid-row-start: 6;
+    grid-row-end: 7;
+    background-color: #5662A9
+}
 
 .future{
     background-color:#5662A9;

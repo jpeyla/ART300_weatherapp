@@ -66,6 +66,19 @@
                     <div class="current_desc">
                         {{current.description_long}}
                     </div>
+
+                    <div class="information">
+                        <div class="info_innergrid">
+                            <p class="vis_label">Visibility:</p>
+                            <p class="current_vis"> {{forecast[0].vis}}</p>
+                            <p class="pop_label">Pop:</p>
+                            <p class="current_pop">{{forecast[0].pop}}</p>
+                            <p class="dewpt_label">Dewpoint:</p>
+                            <p class="current_dewpt">{{forecast[0].dewpt}}</p>
+                            <p class="pres_label">Pressure:</p>
+                            <p class="current_pres">{{forecast[0].pres}} mb</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="future">
                     <p>{{forecast[0].max_temp}}</p>
