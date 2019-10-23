@@ -21,7 +21,7 @@ body{
     background-color:#343E91;
     color:white;
     font-family:'Rubik', sans-serif;
-    position:absolute;
+    display: grid;
     margin-left:1%;
     width:45%;
     height:600px;
@@ -40,7 +40,7 @@ body{
 }
 
 .alert_text{
-    
+
 }
 
 .temp_clouds{
