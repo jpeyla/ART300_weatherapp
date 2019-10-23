@@ -1,0 +1,77 @@
+.degree_symbol:not(:empty)::after {
+    content: "°"
+}
+
+.owm-legend-item{
+    display: none;
+}
+
+#map {
+	width: 600px;
+    height: 600px;
+}
+
+
+
+body{
+    background-color:#BED8FA;
+}
+
+.current{
+    background-color:#343E91;
+    color:white;
+    font-family:'Rubik', sans-serif;
+    position:absolute;
+    margin-left:1%;
+    width:45%;
+    height:600px;
+    border-radius: 7px;
+    padding-top: 2px;
+    padding-left: 5px;
+    padding-bottom: 2px;
+}
+
+.alert{
+    background-color:#F57B4F;
+    width: 95%;
+    height:30px;
+    margin-left:2%;
+    border-radius: 3px;
+}
+
+.alert_text{
+    
+}
+
+.temp_clouds{
+    background-color:#5662A9;
+    border-radius: 7px;
+    width: 40%;
+    height: 20%;
+    margin-top:5px;
+    margin-left:2%;
+    position:absolute;
+}
+
+.temp{
+    color:white;
+    font-size:70px;
+    margin-left:30px;
+    font-weight:600;
+    margin-top:5px;
+    line-height:0;
+}
+.clouds{
+    font-size:1.25em;
+    margin-left:50px;
+}
+
+.future{
+    background-color:#5662A9;
+    color:white;
+    width:51%;
+    max-width: 900px;
+    height:600px;
+    margin-left: 49%;
+    border-radius: 7px;
+}
