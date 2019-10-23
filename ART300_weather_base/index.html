@@ -36,16 +36,35 @@
         <div class="results" id="app">
             <div class="main">
                 <div class="current">
-                    <p>{{time.day}}</p>
-                    <p>{{time.date}}</p>
+                    <p class="c_day">{{time.day}}</p>
+                    <p class="c_date">{{time.date}}</p>
                     <p class="clock">{{time.hour_12}} : {{time.minute}} : {{time.seconds}} {{time.ampm}}</p>
                     <div class="alert">
-                        <p class="alert_text">alert example</p>
+                        alert example
                     </div>
-                    <div class="temp_clouds">
-                        <div class="temp">
-                            <p class="degree_symbol">{{current.temp.current}}</p>
+                    <div class="temp_clouds_left">
+                        <div class="tleft_innergrid">
+                            <div class="temp">
+                                <p class="degree_symbol">{{current.temp.current}}</p>
+                            </div>
+                            <div class="cloud_cover">
+                                <p>{{current.description_main}}</p>
+                            </div>
                         </div>
+                    </div>
+                    <div class="temp_clouds_right">
+                        <div class="tright_innergrid">
+                            <p class="cloud_icon">{{current.description_icon}}</p>
+                            <div class="high_low">
+                                    <p class="degree_symbol">{{current.temp.high}} / {{current.temp.low}}</p>
+                            </div>
+                            <div class="current_wind">
+                                {{current.wind.speed}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="current_desc">
+                        {{current.description_long}}
                     </div>
                 </div>
                 <div class="future">
@@ -103,7 +122,7 @@
 
             <h1>FORECAST</h1>
             <h4>Day 1</h4>
-            <p  class="degree_symbol">High - {{forecast[0].max_temp}}</p>
+            <p  class="degree_symbol">High - {{forecast[0].max_temp}}</alert>
             <p  class="degree_symbol">Low - {{forecast[0].min_temp}}</p>
             <p>{{forecast[0].uv}}</p>
             <p>{{forecast[0].weather.description}}</p>
