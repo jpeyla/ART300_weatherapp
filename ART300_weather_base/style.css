@@ -21,14 +21,58 @@ p{
     margin: 0;
 }
 
-.header{
-    background-color:#343E91;
-    width:95%;
-    height:50px;
-    margin-left:5%;
-    margin-right:5%;
-    margin-bottom:5px;
+#zip{
+    position:fixed;
+    margin-top: 1.5%;
+    margin-left: 78%;
+}
 
+.header{
+    color:white;
+    font-family:'Rubik', sans-serif;
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr 2fr 1fr;
+    grid-template-rows: 50% 50%;
+    background-color:#343E91;
+    width:99.5%;
+    height:50px;
+    margin-left: .5%;
+    margin-bottom:5px;
+    border-radius:4px;
+    padding-top: 2px;
+}
+
+.latitude{
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    font-size: .75em;
+    justify-content: end;
+    margin-top: 3%;
+}
+
+.longitude{
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    font-size: .75em;
+    justify-content: end
+}
+
+.zip{
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.city{
+    grid-column-start: 4;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
 
 
@@ -60,6 +104,8 @@ p{
     grid-row-start:1;
     grid-row-end:1;
     margin-left: 7%;
+    font-weight:600;
+    font-size: 1.5em;
 }
 
 .c_date{
@@ -181,6 +227,7 @@ p{
     margin-top: 3%;
     margin-left: 3%;
     margin-right: 6%;
+    border-radius:3px
 }
 
 .information{
@@ -271,6 +318,35 @@ p{
     margin-right:9%;
     background-color: #5662A9;
     border-radius: 3px;
+}
+
+.sp_grid{
+    display:grid;
+    grid-template-columns: 2;
+    grid-template-rows:2;
+}
+
+.sun_image{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    margin-left: 8%;
+    margin-top: 4%;
+}
+
+.sunrise{
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+
+.sunset{
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 2;
 }
 
 .future{
