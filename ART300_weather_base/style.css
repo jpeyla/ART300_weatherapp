@@ -507,6 +507,14 @@ p{
     margin-left: 30%;
 }
 
+.f_uv{
+    grid-column-start: 5;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    margin-top: 35%;
+}
+
 .day1 {
     grid-row-start: 3;
     grid-row-end:3;
