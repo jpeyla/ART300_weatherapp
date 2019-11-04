@@ -36,7 +36,7 @@
                         <p class="latitude degree_symbol">{{location.coord.lat}}</p>
                         <p class="longitude degree_symbol">{{location.coord.lon}}</p>
                         <p class="zip">{{location.zip}}</p>
-                        <p class="city">{{location.city}}, {{location.state}}</p>
+                        <p class="city">{{location.name}}, {{location.state}}</p>
                 </div>
             <div class="main">
                 <div class="current">
@@ -44,21 +44,21 @@
                     <p class="c_date">{{time.date}}</p>
                     <p class="clock">{{time.hour_12}} : {{time.minute}} : {{time.seconds}} {{time.ampm}}</p>
                     <div class="alert">
-                        alert example
+                        No current alerts.
                     </div>
                     <div class="temp_clouds_left">
                         <div class="tleft_innergrid">
                             <div class="temp">
                                 <p class="degree_symbol">{{current.temp.current}}</p>
                             </div>
-                            <div class="cloud_cover">
-                                <p>{{current.description_main}}</p>
+                            <div class="feelslike">
+                                <p class="degree_symbol feelslike"> Feels like {{current.temp.feelslike}}</p>
                             </div>
                         </div>
                     </div>
                     <div class="temp_clouds_right">
                         <div class="tright_innergrid">
-                            <p class="cloud_icon">{{current.description_icon}}</p>
+                            <div v-bind:class="'icon-' + forecast[0].description_icon" id="cloud_icon"></div>
                             <div class="high_low">
                                     <p class="degree_symbol">{{current.temp.high}} / {{current.temp.low}}</p>
                             </div>
@@ -68,7 +68,7 @@
                         </div>
                     </div>
                     <div class="current_desc">
-                        {{current.description_long}}
+                       <p>{{current.description_long}}</p>
                     </div>
 
                     <div class="information">
@@ -80,21 +80,86 @@
                             <p class="dewpt_label">Dewpoint:</p>
                             <p class="current_dewpt">{{forecast[0].dewpt}}</p>
                             <p class="pres_label">Pressure:</p>
-                            <p class="current_pres">{{forecast[0].pres}} mb</p>
+                            <p class="current_pres">{{forecast[0].pres}}mb</p>
+                            <p class="hum_label">Humidity:</p>
+                            <p class="current_hum">{{current.humidity}}</p>
+                            <p class="uv_label">UV Index:</p>
+                            <p class="current_uv">{{current.uv}}</p>
+                            <p class="aq_label">Air Quality:</p>
+                            <p class="current_aq">{{current.air_quality}}</p>
                         </div>
                     </div>
                     <div class="sun_position">
                         <div class="sun_innergrid">
-                            <div class="sp_grid">
                                 <p class="sun_image"><img src="/img/sunrise_sunset.png" alt="sunrise and sunset" width=180px></p>
                                 <p class="sunrise">{{current.sunrise}}</p>
                                 <p class="sunset">{{current.sunset}}</p>
-                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="future">
-                    <p>{{forecast[0].max_temp}}</p>
+                    <p class="forecast_header">5 Day Forecast</p>
+                    <div class="day0">
+                        <div class="day0_inner">
+                            <p class="day_label">{{forecast[0].weekday}}</p>
+                            <div class="f_icon">
+                                <div v-bind:class="'icon-'+forecast[0].description_icon"></div>
+                            </div>
+                            <p class="degree_symbol f_high">{{forecast[0].max_temp}}</p>
+                            <p class="degree_symbol f_low">/{{forecast[0].min_temp}}</p>
+                            <p class="f_desc">{{ forecast[0].weather.description }} </p>
+                            <p class="f_uv">UV Index {{ forecast[0].uv ? Math.round( forecast[0].uv ) : "" }}</p>
+                        </div>
+                    </div>
+                    <div class="day1">
+                            <div class="day1_inner">
+                                <p class="day_label">{{forecast[1].weekday}}</p>
+                                <div class="f_icon">
+                                    <div v-bind:class="'icon-'+forecast[1].description_icon"></div>
+                                </div>
+                                <p class="degree_symbol f_high">{{forecast[1].max_temp}}</p>
+                                <p class="degree_symbol f_low">/{{forecast[1].min_temp}}</p>
+                                <p class="f_desc">{{ forecast[1].weather.description }} </p>
+                                <p class="f_uv">UV Index {{ forecast[1].uv ? Math.round( forecast[1].uv ) : "" }}</p>
+                            </div>
+                    </div>
+                    <div class="day2">
+                            <div class="day2_inner">
+                                <p class="day_label">{{forecast[2].weekday}}</p>
+                                <div class="f_icon">
+                                    <div v-bind:class="'icon-'+forecast[2].description_icon"></div>
+                                </div>
+                                <p class="degree_symbol f_high">{{forecast[2].max_temp}}</p>
+                                <p class="degree_symbol f_low">/{{forecast[2].min_temp}}</p>
+                                <p class="f_desc">{{ forecast[2].weather.description }} </p>
+                                <p class="f_uv">UV Index {{ forecast[2].uv ? Math.round( forecast[2].uv ) : "" }}</p>
+                            </div>
+                    </div>
+                    <div class="day3">
+                            <div class="day3_inner">
+                                <p class="day_label">{{forecast[3].weekday}}</p>
+                                <div class="f_icon">
+                                    <div v-bind:class="'icon-'+forecast[3].description_icon"></div>
+                                </div>
+                                <p class="degree_symbol f_high">{{forecast[3].max_temp}}</p>
+                                <p class="degree_symbol f_low">/{{forecast[3].min_temp}}</p>
+                                <p class="f_desc">{{ forecast[3].weather.description }} </p>
+                                <p class="f_uv">UV Index {{ forecast[3].uv ? Math.round( forecast[3].uv ) : "" }}</p>
+                            </div>
+                    </div>
+                    <div class="day4">
+                            <div class="day4_inner">
+                                <p class="day_label">{{forecast[4].weekday}}</p>
+                                <div class="f_icon">
+                                    <div v-bind:class="'icon-'+forecast[4].description_icon"></div>
+                                </div>
+                                <p class="degree_symbol f_high">{{forecast[4].max_temp}}</p>
+                                <p class="degree_symbol f_low">/{{forecast[4].min_temp}}</p>
+                                <p class="f_desc">{{ forecast[2].weather.description }} </p>
+                                <p class="f_uv">UV Index {{ forecast[4].uv ? Math.round( forecast[4].uv ) : "" }}</p>
+                            </div>
+                    </div>
+                    </div>
                 </div>
             </div>
 
@@ -198,10 +263,11 @@
             <div class="icon-10d"></div>
             <div class="icon-11d"></div>
             <div class="icon-13d"></div>
-            <div class="icon-50d"></div> -->
+            <div class="icon-50d"></div> 
+        
+        -->
+            
 
-        </div>
-        <div id="map"></div>
 
 
 
